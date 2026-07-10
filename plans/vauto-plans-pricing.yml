@@ -1,0 +1,45 @@
+aid: vauto
+name: vAuto Plans and Pricing
+description: >-
+  vAuto is sold as enterprise dealership software by Cox Automotive, and its
+  APIs are distributed through the partner-gated Cox Automotive Integration
+  Platform. There is no public, self-service pricing or sign-up for the vAuto
+  Inventory API or vAuto Appraisal API. Pricing is negotiated as part of a
+  dealer software subscription and/or an approved integration partnership;
+  prospective integrators contact Cox Automotive / vAuto to be evaluated and
+  onboarded.
+accessModel: partner-gated
+selfService: false
+publicPricing: false
+plans:
+- name: Approved Integration Partner
+  type: contact-sales
+  price: null
+  currency: USD
+  description: >-
+    API access is granted to vetted integration partners through the Cox
+    Automotive Integration Platform. Partners request access, are reviewed and
+    approved, then authenticate via Cox Automotive Bridge ID / OAuth with an
+    issued API key. Commercial terms are negotiated directly and are not
+    published publicly.
+  howToGetAccess:
+  - Register / sign in with a Cox Automotive Bridge ID.
+  - Request access through the Cox Automotive Integration Platform developer portal (developer.coxautoinc.com).
+  - Complete Cox Automotive partner review and approval.
+  - Receive OAuth credentials and an API key scoped to the approved products.
+- name: Dealer Software Subscription
+  type: contact-sales
+  price: null
+  currency: USD
+  description: >-
+    vAuto inventory management, appraisal, pricing, and merchandising products
+    (ProfitTime GPS, Provision, Conquest, Stockwave) are licensed to dealers as
+    a subscription. Pricing is quoted per dealership / dealer group and is not
+    published publicly.
+sources:
+- url: https://developer.coxautoinc.com/
+  note: Cox Automotive Integration Platform developer portal - OAuth and x-api-key based access, no open self-service pricing shown.
+- url: https://developer.coxautoinc.com/marketingcontent/exploreproducts
+  note: Product explorer listing vAuto Inventory API and vAuto Appraisal API for authorized integrators.
+- url: https://www.vauto.com/
+  note: vAuto product site - enterprise dealership software, contact-sales model.

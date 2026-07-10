@@ -1,0 +1,94 @@
+aid: vauto
+name: vAuto
+review:
+  question: Does vAuto expose a documented public WebSocket API?
+  answer: false
+  date: '2026-07-10'
+  reviewer: API Evangelist
+  asyncapiSpecCreated: false
+  asyncapiScopeNote: |
+    No AsyncAPI document was authored. vAuto's APIs (the vAuto Inventory API
+    and vAuto Appraisal API) are distributed through the partner-gated Cox
+    Automotive Integration Platform and are described publicly only as
+    request/response REST APIs over HTTPS for authorized integrators. No
+    server-push transport (WebSocket or SSE) is documented on any public
+    vAuto or Cox Automotive Integration Platform page, and the per-endpoint
+    reference documentation is behind the partner developer portal login, so
+    there is no publicly documented streaming surface to model.
+findings:
+  summary: |
+    vAuto does not publish a documented public WebSocket API. vAuto is a Cox
+    Automotive brand for automotive dealership inventory management, appraisal,
+    pricing, and merchandising. Its programmatic surface is delivered through
+    the Cox Automotive Integration Platform (developer.coxautoinc.com) as
+    partner-gated REST APIs - notably the vAuto Inventory API (read vehicle
+    information, update list price) and the vAuto Appraisal API (create and
+    access appraisals). Both are listed on the Cox Automotive API status page
+    as "vAuto Inventory API - 1.x" and "vAuto Appraisal API - 1.x". Access is
+    not open self-service: integrators must be approved partners, authenticate
+    via Cox Automotive Bridge ID / OAuth with an issued x-api-key, and the
+    endpoint-level reference documentation sits behind the partner developer
+    portal login. No realtime, bidirectional, or streaming WebSocket
+    (ws:// or wss://) endpoint is documented on any public vAuto or Cox
+    Automotive Integration Platform page as of the review date.
+  accessModel: |
+    Partner-gated. There is no public, self-service developer sign-up for the
+    vAuto APIs. Prospective integrators register a Cox Automotive Bridge ID,
+    request access via the Cox Automotive Integration Platform, are reviewed
+    and approved, then receive OAuth credentials and an API key. Commercial
+    terms are contact-sales / negotiated and not published publicly.
+  transports:
+    - protocol: REST
+      scheme: https
+      baseURL: https://api.coxautoinc.com
+      documented: partner-only
+      note: vAuto Inventory API and vAuto Appraisal API are described as REST APIs for authorized integrators; per-endpoint reference docs are behind the Cox Automotive Integration Platform partner login.
+    - protocol: WebSocket
+      scheme: wss
+      documented: false
+      note: No WebSocket endpoint is documented on any public vAuto or Cox Automotive Integration Platform page as of the review date.
+    - protocol: SSE
+      scheme: https
+      documented: false
+      note: No Server-Sent Events / streaming surface is documented publicly.
+  endpointsModeled: true
+  endpointsModeledNote: |
+    The endpoints below are MODELED from the published product summaries
+    ("read vehicle information and update list price" for Inventory; "create
+    and access vehicle appraisals" for Appraisal). They are NOT copied from
+    public reference documentation, because vAuto's per-endpoint reference is
+    behind the partner developer portal. Paths, verbs, and base path are
+    illustrative of the described capability, not verified public contracts.
+  endpointsModeledRest:
+    - GET   https://api.coxautoinc.com/vauto/inventory/v1/vehicles
+    - GET   https://api.coxautoinc.com/vauto/inventory/v1/vehicles/{vehicleId}
+    - PATCH https://api.coxautoinc.com/vauto/inventory/v1/vehicles/{vehicleId}/list-price
+    - POST  https://api.coxautoinc.com/vauto/appraisal/v1/appraisals
+    - GET   https://api.coxautoinc.com/vauto/appraisal/v1/appraisals/{appraisalId}
+sources:
+  - url: https://developer.coxautoinc.com/marketingcontent/exploreproducts
+    type: Documentation
+    note: Cox Automotive Integration Platform product explorer describing the vAuto Inventory API (read vehicle info, update list price) and vAuto Appraisal API (create and access appraisals) for authorized integrators.
+  - url: https://developer.coxautoinc.com/
+    type: DeveloperPortal
+    note: Integration Platform developer portal (React SPA); OAuth-based auth with x-api-key header; no open self-service pricing or WebSocket surface shown.
+  - url: https://coxautoapi.statuspage.io/
+    type: StatusPage
+    note: Lists "vAuto Inventory API - 1.x" and "vAuto Appraisal API - 1.x" as operational REST services. No streaming/WebSocket components listed.
+  - url: https://www.vauto.com/
+    type: Website
+    note: vAuto product site - enterprise dealership inventory management, appraisal, and pricing software; contact-sales model.
+  - url: https://www.coxautoinc.com/brands/vauto/
+    type: ParentCompany
+    note: Confirms vAuto is a Cox Automotive brand.
+actions:
+  asyncapiPath: null
+  apisYmlUpdated: true
+  reason: |
+    No public WebSocket (or any public streaming) surface exists to model.
+    vAuto's APIs are partner-gated REST APIs distributed through the Cox
+    Automotive Integration Platform, with per-endpoint reference behind a
+    partner login. No AsyncAPI document was created. The apis.yml documents
+    the two publicly named logical APIs (Inventory and Appraisal) honestly as
+    partner-gated with endpointsModeled set, and no fabricated full OpenAPI
+    surface was authored.

@@ -1,0 +1,94 @@
+aid: vauto
+url: https://raw.githubusercontent.com/api-evangelist/vauto/refs/heads/main/apis.yml
+name: vAuto
+kind: company
+description: vAuto is a Cox Automotive brand providing new and used vehicle inventory
+  management, appraisal, pricing, and merchandising software for automotive dealers
+  (ProfitTime GPS, Provision, Conquest, Stockwave). vAuto exposes partner-gated APIs
+  through the Cox Automotive Integration Platform (developer.coxautoinc.com) - notably
+  the vAuto Inventory API and the vAuto Appraisal API - that let authorized integrators
+  programmatically read vehicle inventory, update list price, and create and access
+  appraisals in the vAuto ecosystem. Access is not open self-service; integrators
+  must be approved partners, authenticate via Cox Automotive Bridge ID / OAuth with
+  an issued API key, and endpoint-level reference documentation is behind the partner
+  developer portal login. Per-path endpoints below are modeled from the published
+  product summaries, not copied from public reference docs.
+image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
+tags:
+- Automotive
+- Dealership
+- Inventory Management
+- Appraisals
+- Vehicle Pricing
+- Cox Automotive
+- Partner API
+created: '2026-07-10'
+modified: '2026-07-10'
+specificationVersion: '0.19'
+apis:
+- aid: vauto:vauto-inventory-api
+  name: vAuto Inventory API
+  tags:
+  - Inventory
+  - Vehicles
+  - Pricing
+  image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
+  humanURL: https://developer.coxautoinc.com/marketingcontent/exploreproducts
+  baseURL: https://api.coxautoinc.com
+  endpointsModeled: true
+  properties:
+  - url: https://developer.coxautoinc.com/marketingcontent/exploreproducts
+    type: Documentation
+  - url: https://developer.coxautoinc.com/
+    type: DeveloperPortal
+  - url: https://coxautoapi.statuspage.io/
+    type: StatusPage
+  description: 'Partner-gated API that lets authorized integrators programmatically
+    read vehicle information and update list price for inventory in the vAuto
+    ecosystem. Listed as vAuto Inventory API 1.x on the Cox Automotive API status
+    page. Access requires an approved Cox Automotive Integration Platform partnership,
+    Bridge ID / OAuth authentication, and an issued API key; per-endpoint reference
+    docs are behind the partner developer portal. Endpoints are modeled, not sourced
+    from public reference documentation.'
+- aid: vauto:vauto-appraisal-api
+  name: vAuto Appraisal API
+  tags:
+  - Appraisals
+  - Trade-In
+  - Valuation
+  image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
+  humanURL: https://developer.coxautoinc.com/marketingcontent/exploreproducts
+  baseURL: https://api.coxautoinc.com
+  endpointsModeled: true
+  properties:
+  - url: https://developer.coxautoinc.com/marketingcontent/exploreproducts
+    type: Documentation
+  - url: https://developer.coxautoinc.com/
+    type: DeveloperPortal
+  - url: https://coxautoapi.statuspage.io/
+    type: StatusPage
+  description: 'Partner-gated API that lets authorized integrators programmatically
+    create and access vehicle appraisals in the vAuto ecosystem, powering trade-in
+    and used-vehicle valuation workflows. Listed as vAuto Appraisal API 1.x on the
+    Cox Automotive API status page. Access requires an approved Cox Automotive
+    Integration Platform partnership, Bridge ID / OAuth authentication, and an issued
+    API key; per-endpoint reference docs are behind the partner developer portal.
+    Endpoints are modeled, not sourced from public reference documentation.'
+common:
+- type: LinkedIn
+  url: https://www.linkedin.com/company/vauto
+- type: Website
+  url: https://www.vauto.com/
+- type: Documentation
+  url: https://developer.coxautoinc.com/marketingcontent/exploreproducts
+- type: DeveloperPortal
+  url: https://developer.coxautoinc.com/
+- type: StatusPage
+  url: https://coxautoapi.statuspage.io/
+- type: Plans
+  url: plans/vauto-plans-pricing.yml
+- type: ParentCompany
+  url: https://www.coxautoinc.com/brands/vauto/
+maintainers:
+- FN: Kin Lane
+  email: kin@apievangelist.com
