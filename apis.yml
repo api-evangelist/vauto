@@ -13,6 +13,17 @@ description: vAuto is a Cox Automotive brand providing new and used vehicle inve
   an issued API key, and endpoint-level reference documentation is behind the partner
   developer portal login. Per-path endpoints below are modeled from the published
   product summaries, not copied from public reference docs.
+deliveryModel:
+  model: saas
+  open_source: false
+  commercial: true
+  callable_host: false
+  label: Hosted service · you call their endpoint
+  confidence: medium
+  source:
+  - pricing
+  generated: '2026-08-28'
+  method: derived
 accessModel:
   pricing: paid
   onboarding: approval
