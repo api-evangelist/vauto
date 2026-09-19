@@ -41,6 +41,14 @@ tags:
 - Automotive
 - Dealership
 - Inventory Management
+- Appraisal
+- Vehicle Pricing
+- Cox Automotive
+- Partner API
+tags_raw:
+- Automotive
+- Dealership
+- Inventory Management
 - Appraisals
 - Vehicle Pricing
 - Cox Automotive
@@ -76,6 +84,10 @@ apis:
 - aid: vauto:vauto-appraisal-api
   name: vAuto Appraisal API
   tags:
+  - Appraisal
+  - Trade-In
+  - Valuation
+  tags_raw:
   - Appraisals
   - Trade-In
   - Valuation
