@@ -47,3 +47,22 @@ sources:
   note: Product explorer listing vAuto Inventory API and vAuto Appraisal API for authorized integrators.
 - url: https://www.vauto.com/
   note: vAuto product site - enterprise dealership software, contact-sales model.
+x-canonical:
+  generated: '2026-10-08'
+  vocabulary: all/0-working/economics/plans-canonical.yml
+  models:
+  - negotiated
+  units: []
+  plans:
+  - name: Approved Integration Partner
+    access: negotiated
+    model: negotiated
+    model_how: stated
+    units: []
+    periods: []
+  - name: Dealer Software Subscription
+    access: negotiated
+    model: negotiated
+    model_how: stated
+    units: []
+    periods: []
